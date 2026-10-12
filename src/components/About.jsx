@@ -1,19 +1,19 @@
 import SectionHead from './SectionHead.jsx'
 
 const PARTS = [
-  { k: 'N', hl: 'N', rest: 'etworked', desc: 'Conectada a APIs e serviços externos — clima, agenda, notícias, ferramentas.' },
-  { k: 'EX', hl: 'Ex', rest: 'periential', desc: 'Aprende com a experiência: cada interação refina o que ela sabe sobre você.' },
-  { k: 'I', hl: 'I', rest: 'ntelligence &', desc: 'Raciocínio contextual, não respostas genéricas. Ela lembra, relaciona e antecipa.', dim: true },
-  { k: 'U', hl: 'U', rest: 'ser', desc: 'Centrada no usuário: tom, prioridades e módulos moldados ao seu perfil.' },
-  { k: 'S', hl: 'S', rest: 'ystem', desc: 'Um sistema modular, pronto para crescer — até a gestão da sua casa inteligente.' },
+  { k: 'N', hl: 'N', rest: 'etworked', desc: 'Connected to external APIs and services — weather, calendar, news, tools.' },
+  { k: 'EX', hl: 'Ex', rest: 'periential', desc: 'Learns from experience: every interaction refines what it knows about you.' },
+  { k: 'I', hl: 'I', rest: 'ntelligence &', desc: 'Contextual reasoning, not generic answers. It remembers, connects and anticipates.', dim: true },
+  { k: 'U', hl: 'U', rest: 'ser', desc: 'User-centered: tone, priorities and modules shaped around your profile.' },
+  { k: 'S', hl: 'S', rest: 'ystem', desc: 'A modular system built to grow — all the way to running your smart home.' },
 ]
 
 export default function About() {
   return (
-    <section className="section" id="sobre">
-      <SectionHead code="01 // IDENTIDADE" title="Não é um chatbot. É um sistema que te conhece.">
-        O NEXUS é uma assistente adaptativa: começa com o básico sobre você e evolui a cada conversa,
-        guardando contexto de verdade entre as sessões.
+    <section className="section" id="about">
+      <SectionHead code="01 // IDENTITY" title="Not a chatbot. A system that knows you.">
+        NEXUS is an adaptive assistant: it starts with the basics about you and evolves with every
+        conversation, keeping real context across sessions.
       </SectionHead>
 
       <div className="acronym">

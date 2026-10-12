@@ -10,23 +10,23 @@ const ICONS = {
 }
 
 const FEATURES = [
-  { icon: 'memory', t: 'Memória persistente', d: 'Lembra preferências, contexto e conversas anteriores entre sessões — sem você repetir nada.' },
-  { icon: 'api', t: 'Acesso a APIs', d: 'Busca dados reais: clima, agenda, notícias, e-mail e as ferramentas que você já usa.' },
-  { icon: 'profile', t: 'Perfil por profissão', d: 'Vocabulário, prioridades e módulos ajustados à sua área de atuação.' },
-  { icon: 'adapt', t: 'Aprendizado adaptativo', d: 'Ajusta respostas com base nos seus hábitos, horários e feedback.' },
-  { icon: 'chat', t: 'Assistente proativo', d: 'Não espera você perguntar: sugere, lembra e avisa no momento certo.' },
-  { icon: 'home', t: 'Casa inteligente', d: 'Luzes, clima e dispositivos sob comando do NEXUS.', soon: true },
+  { icon: 'memory', t: 'Persistent memory', d: 'Remembers your preferences, context and past conversations across sessions — no need to repeat yourself.' },
+  { icon: 'api', t: 'API access', d: 'Pulls real data: weather, calendar, news, email and the tools you already use.' },
+  { icon: 'profile', t: 'Profession profiles', d: 'Vocabulary, priorities and modules tuned to your field.' },
+  { icon: 'adapt', t: 'Adaptive learning', d: 'Adjusts its answers based on your habits, schedule and feedback.' },
+  { icon: 'chat', t: 'Proactive assistant', d: "Doesn't wait for you to ask: it suggests, reminds and alerts you at the right moment." },
+  { icon: 'home', t: 'Smart home', d: 'Lights, climate and devices under NEXUS control.', soon: true },
 ]
 
 export default function Features() {
   return (
-    <section className="section" id="recursos">
-      <SectionHead code="03 // MÓDULOS" title="Capacidades do sistema" />
+    <section className="section" id="features">
+      <SectionHead code="03 // MODULES" title="System capabilities" />
       <div className="features">
         {FEATURES.map((f, i) => (
           <article className={`feature panel reveal ${f.soon ? 'is-soon' : ''}`} key={f.t} style={{ '--i': i % 3 }}>
             <svg className="feature-icon" viewBox="0 0 24 24" aria-hidden="true">{ICONS[f.icon]}</svg>
-            <h3>{f.t}{f.soon && <span className="badge mono">EM BREVE</span>}</h3>
+            <h3>{f.t}{f.soon && <span className="badge mono">COMING SOON</span>}</h3>
             <p>{f.d}</p>
           </article>
         ))}

@@ -1,12 +1,12 @@
-const C = 300 // centro do viewBox 600x600
+const C = 300 // center of the 600x600 viewBox
 
-// Divide a circunferência em `n` segmentos, cada um preenchido em `fill` (0–1)
+// Split the circumference into `n` segments, each filled by `fill` (0–1)
 function dash(r, n, fill) {
   const seg = (2 * Math.PI * r) / n
   return `${seg * fill} ${seg * (1 - fill)}`
 }
 
-// Um arco único de `len` (0–1) da circunferência
+// A single arc covering `len` (0–1) of the circumference
 function arc(r, len) {
   const circ = 2 * Math.PI * r
   return `${circ * len} ${circ * (1 - len)}`
@@ -45,7 +45,7 @@ export default function HudRings({ className = '' }) {
 
       <circle cx={C} cy={C} r="250" fill="url(#ringCore)" className="ring-core" />
 
-      {/* Retícula vertical */}
+      {/* Vertical crosshair */}
       <g className="ring-boot crosshair" style={{ '--delay': '0.9s' }}>
         <line x1={C} y1="0" x2={C} y2="34" className="st-red" />
         <line x1={C} y1="566" x2={C} y2="600" className="st-red" />
@@ -55,37 +55,37 @@ export default function HudRings({ className = '' }) {
         <line x1="286" y1="528" x2="314" y2="528" className="st-red thin" />
       </g>
 
-      {/* 1 · anel externo pontilhado */}
+      {/* 1 · dotted outer ring */}
       <Ring delay={0} dur={140}>
         <circle cx={C} cy={C} r="292" className="st-faint" strokeDasharray="2 7" />
       </Ring>
 
-      {/* 2 · faixas largas translúcidas */}
+      {/* 2 · wide translucent bands */}
       <Ring delay={0.15} dur={48} reverse>
         <circle cx={C} cy={C} r="272" className="st-band" strokeDasharray={dash(272, 4, 0.72)} />
         <circle cx={C} cy={C} r="279" className="st-faint" />
       </Ring>
 
-      {/* 3 · anel fino com arco vermelho */}
+      {/* 3 · thin ring with red arc */}
       <Ring delay={0.3} dur={20}>
         <circle cx={C} cy={C} r="258" className="st-blue thin" />
         <circle cx={C} cy={C} r="258" className="st-red bold" strokeDasharray={arc(258, 0.06)} filter="url(#glow)" />
         <circle cx={C} cy={C} r="258" className="st-red bold" strokeDasharray={arc(258, 0.02)} strokeDashoffset={-810} />
       </Ring>
 
-      {/* 4 · arcos azuis brilhantes topo/base */}
+      {/* 4 · bright blue arcs */}
       <Ring delay={0.45} dur={28} reverse>
         <circle cx={C} cy={C} r="244" className="st-blue-bright bold" strokeDasharray={dash(244, 2, 0.17)} filter="url(#glow)" />
         <circle cx={C} cy={C} r="244" className="st-red" strokeDasharray={dash(244, 2, 0.045)} strokeDashoffset={-140} />
       </Ring>
 
-      {/* 5 · marcações (ticks) */}
+      {/* 5 · tick marks */}
       <Ring delay={0.6} dur={90}>
         <circle cx={C} cy={C} r="230" className="st-ticks" strokeDasharray={dash(230, 120, 0.12)} />
         <circle cx={C} cy={C} r="224" className="st-faint" />
       </Ring>
 
-      {/* 6 · colchetes vermelhos laterais (oscilam) */}
+      {/* 6 · swaying red side brackets */}
       <Ring delay={0.75} dur={7} sway>
         <circle
           cx={C} cy={C} r="210"
@@ -96,7 +96,7 @@ export default function HudRings({ className = '' }) {
         />
       </Ring>
 
-      {/* 7 · anel interno */}
+      {/* 7 · inner ring */}
       <Ring delay={0.9} dur={60} reverse>
         <circle cx={C} cy={C} r="196" className="st-blue thin" strokeDasharray={dash(196, 3, 0.9)} />
       </Ring>

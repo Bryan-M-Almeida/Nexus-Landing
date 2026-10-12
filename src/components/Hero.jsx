@@ -3,7 +3,7 @@ import HudRings from './HudRings.jsx'
 import NexusWordmark from './NexusWordmark.jsx'
 import { GITHUB_URL } from '../config.js'
 
-// Fases da intro: 0 = aros girando · 1 = nome entra · 2 = conteúdo liberado
+// Intro phases: 0 = rings spin up · 1 = name enters · 2 = content revealed
 const TIMELINE = [1700, 3300]
 
 function Connector({ side }) {
@@ -64,26 +64,26 @@ export default function Hero({ onIntroDone }) {
         </div>
 
         <div className="hero-status mono" aria-hidden="true">
-          <span className="dot" /> {phase < 1 ? 'INICIALIZANDO SISTEMAS…' : 'SISTEMA ONLINE'}
+          <span className="dot" /> {phase < 1 ? 'INITIALIZING SYSTEMS…' : 'SYSTEM ONLINE'}
         </div>
       </div>
 
       <div className="hero-content">
         <p className="hero-lead">
-          A assistente de IA que <strong>aprende quem você é</strong>. Inspirada no J.A.R.V.I.S,
-          com memória persistente, acesso a APIs e perfis adaptados à sua profissão.
+          The AI assistant that <strong>learns who you are</strong>. Inspired by J.A.R.V.I.S, with
+          persistent memory, API access and profiles tailored to your profession.
         </p>
         <div className="hero-ctas">
           <a className="btn btn-primary" href={GITHUB_URL} target="_blank" rel="noreferrer">
-            <GithubIcon /> Ver no GitHub
+            <GithubIcon /> View on GitHub
           </a>
-          <a className="btn btn-ghost" href="#como-funciona">
-            Como funciona
+          <a className="btn btn-ghost" href="#how-it-works">
+            How it works
           </a>
         </div>
       </div>
 
-      <a className="scroll-cue" href="#sobre" aria-label="Rolar para a próxima seção">
+      <a className="scroll-cue" href="#about" aria-label="Scroll to the next section">
         <span />
       </a>
     </section>

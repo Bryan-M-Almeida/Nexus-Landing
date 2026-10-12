@@ -1,23 +1,23 @@
 import SectionHead from './SectionHead.jsx'
 
 const STEPS = [
-  { n: '01', t: 'Formulário inicial', d: 'Você conta o essencial: nome, profissão, rotina, interesses e objetivos. Leva menos de 2 minutos.' },
-  { n: '02', t: 'Perfil base', d: 'O NEXUS monta seu perfil, escolhe o tom de voz e ativa os módulos certos para a sua área.' },
-  { n: '03', t: 'Adaptação contínua', d: 'Cada interação alimenta a memória persistente. Quanto mais você usa, mais ele te entende.' },
+  { n: '01', t: 'Onboarding form', d: 'Tell it the essentials: name, profession, routine, interests and goals. Takes less than 2 minutes.' },
+  { n: '02', t: 'Base profile', d: 'NEXUS builds your profile, picks the right tone of voice and enables the modules for your field.' },
+  { n: '03', t: 'Continuous adaptation', d: 'Every interaction feeds its persistent memory. The more you use it, the better it understands you.' },
 ]
 
 const FIELDS = [
-  ['NOME', 'Alex Martins'],
-  ['PROFISSÃO', 'Desenvolvedor(a) Full-Stack'],
-  ['ROTINA', 'Começa às 9h · foco à tarde'],
-  ['INTERESSES', 'IA, games, café'],
+  ['NAME', 'Alex Martins'],
+  ['PROFESSION', 'Full-Stack Developer'],
+  ['ROUTINE', 'Starts at 9 AM · deep focus in the afternoon'],
+  ['INTERESTS', 'AI, games, coffee'],
 ]
 
 export default function HowItWorks() {
   return (
-    <section className="section" id="como-funciona">
-      <SectionHead code="02 // PROTOCOLO" title="Do formulário a uma IA que é só sua">
-        Um fluxo simples na entrada, uma IA cada vez mais pessoal na saída.
+    <section className="section" id="how-it-works">
+      <SectionHead code="02 // PROTOCOL" title="From one form to an AI that's truly yours">
+        A simple flow going in, an increasingly personal AI coming out.
       </SectionHead>
 
       <div className="how">
@@ -33,10 +33,10 @@ export default function HowItWorks() {
           ))}
         </ol>
 
-        <div className="panel form-mock reveal" aria-label="Exemplo do formulário de perfil">
+        <div className="panel form-mock reveal" aria-label="Sample onboarding form">
           <div className="panel-bar mono">
             <span>NEXUS://onboarding</span>
-            <span className="live"><i /> SINCRONIZANDO</span>
+            <span className="live"><i /> SYNCING</span>
           </div>
           {FIELDS.map(([label, value], i) => (
             <div className="mock-field" key={label} style={{ '--i': i }}>
@@ -45,12 +45,12 @@ export default function HowItWorks() {
             </div>
           ))}
           <div className="mock-progress">
-            <div className="mono"><span>PERFIL NEURAL</span><span className="pct">100%</span></div>
+            <div className="mono"><span>NEURAL PROFILE</span><span className="pct">100%</span></div>
             <div className="bar"><span /></div>
           </div>
           <p className="mock-reply mono">
-            <span className="tag">NEXUS&gt;</span> Prazer, Alex. Ativei os módulos de código e agenda.
-            Quer que eu revise seus PRs toda manhã?
+            <span className="tag">NEXUS&gt;</span> Nice to meet you, Alex. I've enabled the code and calendar
+            modules. Want me to review your PRs every morning?
           </p>
         </div>
       </div>

@@ -1,32 +1,39 @@
 # NEXUS · Landing Page
 
-Landing page (CTA) do projeto **NEXUS — Networked Experiential Intelligence & User System**,
-uma IA assistente adaptativa inspirada no J.A.R.V.I.S. Repositório do projeto:
+Landing page (CTA) for **NEXUS — Networked Experiential Intelligence & User System**,
+an adaptive AI assistant inspired by J.A.R.V.I.S. Project repository:
 https://github.com/Bryan-M-Almeida/nexusAI
 
-## Rodando
+Live: https://nexus-landing-dun.vercel.app
+
+## Getting started
 
 ```bash
 npm install
-npm run dev      # desenvolvimento
-npm run build    # build de produção em /dist
+npm run dev      # development server
+npm run build    # production build in /dist
 ```
 
-## Estrutura
+## Structure
 
-| Arquivo | O que faz |
+| File | Purpose |
 | --- | --- |
-| `src/components/HudRings.jsx` | Os aros HUD em SVG (boot + rotação contínua) |
-| `src/components/Hero.jsx` | Intro: aros → nome N.E.X.U.S → conteúdo e CTAs |
-| `src/components/NexusWordmark.jsx` | Logotipo animado letra a letra |
-| `src/components/About.jsx` | Significado do acrônimo |
-| `src/components/HowItWorks.jsx` | Fluxo formulário → perfil → adaptação |
-| `src/components/Features.jsx` | Capacidades (memória, APIs, perfis…) |
-| `src/components/Profiles.jsx` | Demo interativa de perfis por profissão |
-| `src/components/Roadmap.jsx` | Fases do projeto (até casa inteligente) |
-| `src/components/FinalCta.jsx` | CTA final para o GitHub |
-| `src/config.js` | URL do repositório |
-| `src/index.css` | Paleta, tipografia e todas as animações |
+| `src/components/HudRings.jsx` | HUD rings in SVG (boot-up + continuous rotation) |
+| `src/components/Hero.jsx` | Intro: rings → N.E.X.U.S name → content and CTAs |
+| `src/components/NexusWordmark.jsx` | Letter-by-letter animated logo |
+| `src/components/About.jsx` | Acronym breakdown |
+| `src/components/HowItWorks.jsx` | Form → profile → adaptation flow |
+| `src/components/Features.jsx` | Capabilities (memory, APIs, profiles…) |
+| `src/components/Profiles.jsx` | Interactive profession profiles demo |
+| `src/components/Roadmap.jsx` | Project phases (up to smart home) |
+| `src/components/FinalCta.jsx` | Final GitHub CTA |
+| `src/config.js` | Repository URL |
+| `src/index.css` | Palette, typography and all animations |
 
-O tempo da intro fica em `TIMELINE` dentro de `Hero.jsx`. Usuários com
-"reduzir movimento" ativado no sistema veem a página já no estado final.
+Intro timing lives in the `TIMELINE` constant in `Hero.jsx`. Visitors with
+"reduce motion" enabled see the page in its final state right away.
+
+## Deployment
+
+Hosted on Vercel and connected to this repository: every push to `main`
+triggers a production deploy.

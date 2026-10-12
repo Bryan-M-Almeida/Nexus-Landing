@@ -13,7 +13,7 @@ export default function App() {
   const [introDone, setIntroDone] = useState(false)
   const handleIntroDone = useCallback(() => setIntroDone(true), [])
 
-  // Revela elementos .reveal ao entrarem na tela
+  // Reveal .reveal elements as they scroll into view
   useEffect(() => {
     const els = document.querySelectorAll('.reveal')
     const io = new IntersectionObserver(

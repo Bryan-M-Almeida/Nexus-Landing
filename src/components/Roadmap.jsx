@@ -2,23 +2,23 @@ import SectionHead from './SectionHead.jsx'
 
 const PHASES = [
   {
-    n: 'FASE 01', t: 'Protótipo', status: 'EM DESENVOLVIMENTO', current: true,
-    items: ['Formulário de onboarding', 'Perfil base do usuário', 'Memória persistente', 'Integração com APIs'],
+    n: 'PHASE 01', t: 'Prototype', status: 'IN DEVELOPMENT', current: true,
+    items: ['Onboarding form', 'Base user profile', 'Persistent memory', 'API integrations'],
   },
   {
-    n: 'FASE 02', t: 'Perfis profissionais', status: 'PRÓXIMO',
-    items: ['Módulos especializados por área', 'Tom de voz por perfil', 'Rotinas e lembretes proativos'],
+    n: 'PHASE 02', t: 'Professional profiles', status: 'NEXT',
+    items: ['Field-specific modules', 'Per-profile tone of voice', 'Proactive routines and reminders'],
   },
   {
-    n: 'FASE 03', t: 'Casa inteligente', status: 'FUTURO',
-    items: ['Integração com dispositivos IoT', 'Automações de ambiente', 'Comandos por voz'],
+    n: 'PHASE 03', t: 'Smart home', status: 'FUTURE',
+    items: ['IoT device integration', 'Environment automations', 'Voice commands'],
   },
 ]
 
 export default function Roadmap() {
   return (
     <section className="section" id="roadmap">
-      <SectionHead code="05 // ROADMAP" title="Para onde o NEXUS vai" />
+      <SectionHead code="05 // ROADMAP" title="Where NEXUS is headed" />
       <ol className="roadmap">
         {PHASES.map((ph, i) => (
           <li className={`phase panel reveal ${ph.current ? 'is-current' : ''}`} key={ph.n} style={{ '--i': i }}>

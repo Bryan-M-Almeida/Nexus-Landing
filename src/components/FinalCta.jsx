@@ -8,18 +8,18 @@ export default function FinalCta() {
     <section className="final-cta" id="cta">
       <div className="final-rings" aria-hidden="true"><HudRings /></div>
       <div className="final-inner reveal">
-        <p className="eyebrow mono"><span>06 // INICIAR</span></p>
-        <h2>Pronto para ativar o</h2>
+        <p className="eyebrow mono"><span>06 // INITIALIZE</span></p>
+        <h2>Ready to activate</h2>
         <NexusWordmark as="p" className="wordmark-sm" />
         <p className="section-sub">
-          O código está aberto. Explore o repositório, deixe sua estrela e acompanhe a evolução do projeto no Hackathon.
+          The code is open. Explore the repository, leave a star and follow the project as it evolves during the Hackathon.
         </p>
         <div className="hero-ctas">
           <a className="btn btn-primary btn-lg" href={GITHUB_URL} target="_blank" rel="noreferrer">
-            <GithubIcon /> Acessar repositório
+            <GithubIcon /> View repository
           </a>
           <a className="btn btn-ghost btn-lg" href={`${GITHUB_URL}/stargazers`} target="_blank" rel="noreferrer">
-            ★ Deixar uma estrela
+            ★ Leave a star
           </a>
         </div>
       </div>

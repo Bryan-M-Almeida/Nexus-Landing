@@ -3,34 +3,34 @@ import SectionHead from './SectionHead.jsx'
 
 const PROFILES = [
   {
-    id: 'dev', label: 'Desenvolvedor',
-    tone: 'Técnico · direto',
-    msg: 'Bom dia, Alex. O build da madrugada passou e 2 PRs aguardam sua revisão. Quer um resumo das mudanças?',
-    modules: ['GitHub API', 'Docs técnicas', 'Agenda', 'Foco/Pomodoro'],
+    id: 'dev', label: 'Developer',
+    tone: 'Technical · direct',
+    msg: "Good morning, Alex. Last night's build passed and 2 PRs are waiting for your review. Want a summary of the changes?",
+    modules: ['GitHub API', 'Tech docs', 'Calendar', 'Focus/Pomodoro'],
   },
   {
-    id: 'med', label: 'Saúde',
-    tone: 'Preciso · cuidadoso',
-    msg: 'Seu plantão começa às 19h. Separei 3 artigos novos sobre o tema que você pesquisou ontem.',
-    modules: ['Agenda de plantões', 'Artigos científicos', 'Lembretes', 'Notas rápidas'],
+    id: 'med', label: 'Healthcare',
+    tone: 'Precise · careful',
+    msg: 'Your shift starts at 7 PM. I pulled 3 new papers on the topic you were researching yesterday.',
+    modules: ['Shift schedule', 'Research papers', 'Reminders', 'Quick notes'],
   },
   {
-    id: 'stu', label: 'Estudante',
-    tone: 'Didático · motivador',
-    msg: 'Prova de Cálculo em 3 dias. Montei um plano de revisão de 40 min por dia. Começamos por derivadas?',
-    modules: ['Calendário', 'Flashcards', 'Resumos', 'Pomodoro'],
+    id: 'stu', label: 'Student',
+    tone: 'Didactic · encouraging',
+    msg: 'Calculus exam in 3 days. I built a 40-minute daily review plan. Shall we start with derivatives?',
+    modules: ['Calendar', 'Flashcards', 'Summaries', 'Pomodoro'],
   },
   {
     id: 'des', label: 'Designer',
-    tone: 'Visual · criativo',
-    msg: 'O feedback do cliente chegou. Também separei 4 referências novas para o moodboard do projeto.',
-    modules: ['Moodboard', 'Paletas', 'E-mail', 'Prazos'],
+    tone: 'Visual · creative',
+    msg: "The client's feedback just came in. I also saved 4 new references to the project moodboard.",
+    modules: ['Moodboard', 'Palettes', 'Email', 'Deadlines'],
   },
   {
-    id: 'biz', label: 'Empreendedor',
-    tone: 'Objetivo · estratégico',
-    msg: 'Reunião com o investidor às 15h. Preparei os números da semana e os 3 pontos que você quis destacar.',
-    modules: ['Finanças', 'CRM', 'E-mail', 'Notícias do setor'],
+    id: 'biz', label: 'Entrepreneur',
+    tone: 'Objective · strategic',
+    msg: "Investor meeting at 3 PM. I've prepared this week's numbers and the 3 points you wanted to highlight.",
+    modules: ['Finance', 'CRM', 'Email', 'Industry news'],
   },
 ]
 
@@ -59,13 +59,13 @@ export default function Profiles() {
   const typed = useTypewriter(p.msg)
 
   return (
-    <section className="section" id="perfis">
-      <SectionHead code="04 // PERFIS" title="Uma IA, muitas versões de você">
-        O NEXUS muda de comportamento conforme sua profissão. Escolha um perfil e veja como ele responde.
+    <section className="section" id="profiles">
+      <SectionHead code="04 // PROFILES" title="One AI, many versions of you">
+        NEXUS changes its behavior based on your profession. Pick a profile and see how it responds.
       </SectionHead>
 
       <div className="profiles reveal">
-        <div className="profile-tabs" role="tablist" aria-label="Perfis profissionais">
+        <div className="profile-tabs" role="tablist" aria-label="Professional profiles">
           {PROFILES.map((x) => (
             <button
               key={x.id}
@@ -81,14 +81,14 @@ export default function Profiles() {
 
         <div className="panel profile-screen" role="tabpanel">
           <div className="panel-bar mono">
-            <span>PERFIL ATIVO: {p.label.toUpperCase()}</span>
-            <span>TOM: {p.tone}</span>
+            <span>ACTIVE PROFILE: {p.label.toUpperCase()}</span>
+            <span>TONE: {p.tone}</span>
           </div>
           <p className="profile-msg mono" aria-live="polite">
             <span className="tag">NEXUS&gt;</span> {typed}<span className="caret" />
           </p>
           <div className="profile-modules">
-            <span className="mono label">MÓDULOS CARREGADOS</span>
+            <span className="mono label">LOADED MODULES</span>
             <ul>
               {p.modules.map((m) => <li key={m} className="mono">{m}</li>)}
             </ul>
