@@ -1,19 +1,21 @@
+import { useI18n } from '../i18n/I18nProvider.jsx'
 import SectionHead from './SectionHead.jsx'
 
+// The acronym itself stays in English in every language
 const PARTS = [
-  { k: 'N', hl: 'N', rest: 'etworked', desc: 'Connected to external APIs and services — weather, calendar, news, tools.' },
-  { k: 'EX', hl: 'Ex', rest: 'periential', desc: 'Learns from experience: every interaction refines what it knows about you.' },
-  { k: 'I', hl: 'I', rest: 'ntelligence &', desc: 'Contextual reasoning, not generic answers. It remembers, connects and anticipates.', dim: true },
-  { k: 'U', hl: 'U', rest: 'ser', desc: 'User-centered: tone, priorities and modules shaped around your profile.' },
-  { k: 'S', hl: 'S', rest: 'ystem', desc: 'A modular system built to grow — all the way to running your smart home.' },
+  { k: 'N', hl: 'N', rest: 'etworked' },
+  { k: 'EX', hl: 'Ex', rest: 'periential' },
+  { k: 'I', hl: 'I', rest: 'ntelligence &', dim: true },
+  { k: 'U', hl: 'U', rest: 'ser' },
+  { k: 'S', hl: 'S', rest: 'ystem' },
 ]
 
 export default function About() {
+  const { t } = useI18n()
   return (
     <section className="section" id="about">
-      <SectionHead code="01 // IDENTITY" title="Not a chatbot. A system that knows you.">
-        NEXUS is an adaptive assistant: it starts with the basics about you and evolves with every
-        conversation, keeping real context across sessions.
+      <SectionHead code={t.about.code} title={t.about.title}>
+        {t.about.sub}
       </SectionHead>
 
       <div className="acronym">
@@ -21,7 +23,7 @@ export default function About() {
           <article className={`acronym-item reveal ${p.dim ? 'is-dim' : ''}`} key={p.k} style={{ '--i': i }}>
             <span className="acronym-letter">{p.k}</span>
             <h3><b>{p.hl}</b>{p.rest}</h3>
-            <p>{p.desc}</p>
+            <p>{t.about.parts[i]}</p>
           </article>
         ))}
       </div>

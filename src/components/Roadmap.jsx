@@ -1,34 +1,21 @@
+import { useI18n } from '../i18n/I18nProvider.jsx'
 import SectionHead from './SectionHead.jsx'
 
-const PHASES = [
-  {
-    n: 'PHASE 01', t: 'Prototype', status: 'IN DEVELOPMENT', current: true,
-    items: ['Onboarding form', 'Base user profile', 'Persistent memory', 'API integrations'],
-  },
-  {
-    n: 'PHASE 02', t: 'Professional profiles', status: 'NEXT',
-    items: ['Field-specific modules', 'Per-profile tone of voice', 'Proactive routines and reminders'],
-  },
-  {
-    n: 'PHASE 03', t: 'Smart home', status: 'FUTURE',
-    items: ['IoT device integration', 'Environment automations', 'Voice commands'],
-  },
-]
-
 export default function Roadmap() {
+  const { t } = useI18n()
   return (
     <section className="section" id="roadmap">
-      <SectionHead code="05 // ROADMAP" title="Where NEXUS is headed" />
+      <SectionHead code={t.roadmap.code} title={t.roadmap.title} />
       <ol className="roadmap">
-        {PHASES.map((ph, i) => (
-          <li className={`phase panel reveal ${ph.current ? 'is-current' : ''}`} key={ph.n} style={{ '--i': i }}>
+        {t.roadmap.phases.map((ph, i) => (
+          <li className={`phase panel reveal ${i === 0 ? 'is-current' : ''}`} key={i} style={{ '--i': i }}>
             <div className="phase-top mono">
-              <span>{ph.n}</span>
+              <span>{t.roadmap.phase} {String(i + 1).padStart(2, '0')}</span>
               <span className="phase-status">{ph.status}</span>
             </div>
             <h3>{ph.t}</h3>
             <ul>
-              {ph.items.map((it) => <li key={it}>{it}</li>)}
+              {ph.items.map((it, j) => <li key={j}>{it}</li>)}
             </ul>
           </li>
         ))}

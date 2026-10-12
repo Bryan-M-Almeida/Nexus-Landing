@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import HudRings from './HudRings.jsx'
 import NexusWordmark from './NexusWordmark.jsx'
 import { GITHUB_URL } from '../config.js'
+import { useI18n } from '../i18n/I18nProvider.jsx'
 
 // Intro phases: 0 = rings spin up · 1 = name enters · 2 = content revealed
 const TIMELINE = [1700, 3300]
@@ -22,6 +23,7 @@ function Connector({ side }) {
 }
 
 export default function Hero({ onIntroDone }) {
+  const { t } = useI18n()
   const [phase, setPhase] = useState(0)
 
   useEffect(() => {
@@ -64,26 +66,25 @@ export default function Hero({ onIntroDone }) {
         </div>
 
         <div className="hero-status mono" aria-hidden="true">
-          <span className="dot" /> {phase < 1 ? 'INITIALIZING SYSTEMS…' : 'SYSTEM ONLINE'}
+          <span className="dot" /> {phase < 1 ? t.hero.booting : t.hero.online}
         </div>
       </div>
 
       <div className="hero-content">
         <p className="hero-lead">
-          The AI assistant that <strong>learns who you are</strong>. Inspired by J.A.R.V.I.S, with
-          persistent memory, API access and profiles tailored to your profession.
+          {t.hero.leadBefore}<strong>{t.hero.leadStrong}</strong>{t.hero.leadAfter}
         </p>
         <div className="hero-ctas">
           <a className="btn btn-primary" href={GITHUB_URL} target="_blank" rel="noreferrer">
-            <GithubIcon /> View on GitHub
+            <GithubIcon /> {t.hero.github}
           </a>
           <a className="btn btn-ghost" href="#how-it-works">
-            How it works
+            {t.hero.how}
           </a>
         </div>
       </div>
 
-      <a className="scroll-cue" href="#about" aria-label="Scroll to the next section">
+      <a className="scroll-cue" href="#about" aria-label={t.hero.scroll}>
         <span />
       </a>
     </section>

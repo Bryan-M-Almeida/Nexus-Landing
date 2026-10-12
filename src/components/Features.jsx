@@ -1,3 +1,4 @@
+import { useI18n } from '../i18n/I18nProvider.jsx'
 import SectionHead from './SectionHead.jsx'
 
 const ICONS = {
@@ -9,25 +10,30 @@ const ICONS = {
   home: <path d="M3 11 12 4l9 7M5 10v10h14V10M10 20v-6h4v6" />,
 }
 
+// Same order as `features.items` in the translations
 const FEATURES = [
-  { icon: 'memory', t: 'Persistent memory', d: 'Remembers your preferences, context and past conversations across sessions — no need to repeat yourself.' },
-  { icon: 'api', t: 'API access', d: 'Pulls real data: weather, calendar, news, email and the tools you already use.' },
-  { icon: 'profile', t: 'Profession profiles', d: 'Vocabulary, priorities and modules tuned to your field.' },
-  { icon: 'adapt', t: 'Adaptive learning', d: 'Adjusts its answers based on your habits, schedule and feedback.' },
-  { icon: 'chat', t: 'Proactive assistant', d: "Doesn't wait for you to ask: it suggests, reminds and alerts you at the right moment." },
-  { icon: 'home', t: 'Smart home', d: 'Lights, climate and devices under NEXUS control.', soon: true },
+  { icon: 'memory' },
+  { icon: 'api' },
+  { icon: 'profile' },
+  { icon: 'adapt' },
+  { icon: 'chat' },
+  { icon: 'home', soon: true },
 ]
 
 export default function Features() {
+  const { t } = useI18n()
   return (
     <section className="section" id="features">
-      <SectionHead code="03 // MODULES" title="System capabilities" />
+      <SectionHead code={t.features.code} title={t.features.title} />
       <div className="features">
         {FEATURES.map((f, i) => (
-          <article className={`feature panel reveal ${f.soon ? 'is-soon' : ''}`} key={f.t} style={{ '--i': i % 3 }}>
+          <article className={`feature panel reveal ${f.soon ? 'is-soon' : ''}`} key={f.icon} style={{ '--i': i % 3 }}>
             <svg className="feature-icon" viewBox="0 0 24 24" aria-hidden="true">{ICONS[f.icon]}</svg>
-            <h3>{f.t}{f.soon && <span className="badge mono">COMING SOON</span>}</h3>
-            <p>{f.d}</p>
+            <h3>
+              {t.features.items[i].t}
+              {f.soon && <span className="badge mono">{t.features.soon}</span>}
+            </h3>
+            <p>{t.features.items[i].d}</p>
           </article>
         ))}
       </div>
