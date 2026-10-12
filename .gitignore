@@ -5,3 +5,6 @@ dist
 
 .vercel
 .env*
+
+# Recorded videos
+media/
